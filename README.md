@@ -5,13 +5,13 @@
 
 | Step | Purpose | Main output |
 |---|---|---|
-| Read QC | FastQC, fastp, MultiQC on normal/tumor R1/R2 | QC reports, `multiqc_report.html` |
-| Alignment | BWA-MEM2 → samtools sort/index | sorted BAMs |
-| Pre-processing | GATK MarkDuplicates, CollectMultipleMetrics, BaseRecalibrator, ApplyBQSR | `*.recal.bam` |
-| BAM QC | samtools flagstat, GATK CollectHsMetrics, MultiQC | flagstat and Metrics reports |
-| Variant calling | GATK Mutect2 → FilterMutectCalls → bcftools PASS extraction | `somatic.filtered.PASS.vcf.gz` |
-| Annotation | Ensembl VEP + ClinVar custom track, filter_vep, summary | `*.vep.clinvar.tsv`, `*.summary.txt`  |
-| Plots | R (tidyverse/ggplot2) | consequence, variant, biotype plots |
+| Read QC | FastQC, fastp, MultiQC on normal/tumor R1/R2 | 
+| Alignment | BWA-MEM2 → samtools sort/index | 
+| Pre-processing | MarkDuplicates, MultipleMetrics, BaseRecalibrator |
+| BAM QC | samtools flagstat, GATK CollectMetrics, MultiQC | 
+| Variant calling | GATK Mutect2 → FilterMutectCalls → bcftools PASS extraction | 
+| Annotation | Ensembl VEP + ClinVar custom, filtervep, summary | 
+| Plots | R (tidyverse/ggplot2) |
 
 
 ## Software versions
@@ -24,5 +24,5 @@
 | GATK | 4.6.2.0 |
 | samtools | 1.21 |
 | bcftools | 1.21 |
-| Ensembl VEP | 116, homo_sapiens, offline GRCh38 cache |
+| Ensembl VEP | 116, homo_sapiens GRCh38|
 | R | R/4.2.1-foss-2021a |
