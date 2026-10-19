@@ -3,8 +3,8 @@
 
 ## Contents
 
-| Step | Purpose | Main output |
-|---|---|---|
+| Step | Purpose |
+|---|---|
 | Read QC | FastQC, fastp, MultiQC on normal/tumor R1/R2 | 
 | Alignment | BWA-MEM2 → samtools sort/index | 
 | Pre-processing | MarkDuplicates, MultipleMetrics, BaseRecalibrator |
@@ -15,7 +15,7 @@
 
 
 ## Software versions
-| Tool | Version / environment |
+| Tool | Version |
 |---|---|
 | FastQC | 0.12.1 |
 | fastp | 0.24.1 |
